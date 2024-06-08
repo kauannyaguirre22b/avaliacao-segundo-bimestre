@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://www.db-fiddle.com/f/nHryJJw2m1PKu6upVTb84W/5 -->
+<html lang="pt" class="translated-ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=1080">
+    <meta name="description" content="An online SQL database playground for testing, debugging and sharing SQL snippets.">
+    <link rel="icon" type="image/png" href="https://www.db-fiddle.com/favicon-7f8b8049f6e2ae243dcd50e3925fe458.png">
+
+    
+<meta name="db-fiddle/config/environment" content="%7B%22modulePrefix%22%3A%22db-fiddle%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22apiEndpoint%22%3A%22https%3A//prod-api.db-fiddle.com%22%2C%22apiNamespace%22%3A%22v1%22%2C%22databaseOptions%22%3A%5B%7B%22groupName%22%3A%22MySQL%22%2C%22typeIdentifier%22%3A%22mysql%22%2C%22options%22%3A%5B%7B%22groupName%22%3A%22MySQL%22%2C%22name%22%3A%228.0%22%2C%22url%22%3A%22server/mysql/8-0%22%2C%22dbType%22%3A%22mysql%22%2C%22codeMirrorMode%22%3A%22text/x-mysql%22%2C%22versionIdentifier%22%3A%228.0%22%7D%2C%7B%22groupName%22%3A%22MySQL%22%2C%22name%22%3A%225.7%22%2C%22url%22%3A%22server/mysql/5-7%22%2C%22dbType%22%3A%22mysql%22%2C%22codeMirrorMode%22%3A%22text/x-mysql%22%2C%22versionIdentifier%22%3A%225.7%22%7D%2C%7B%22groupName%22%3A%22MySQL%22%2C%22name%22%3A%225.6%22%2C%22url%22%3A%22server/mysql/5-6%22%2C%22dbType%22%3A%22mysql%22%2C%22codeMirrorMode%22%3A%22text/x-mysql%22%2C%22versionIdentifier%22%3A%225.6%22%7D%2C%7B%22groupName%22%3A%22MySQL%22%2C%22name%22%3A%225.5%22%2C%22url%22%3A%22server/mysql/5-5%22%2C%22dbType%22%3A%22mysql%22%2C%22codeMirrorMode%22%3A%22text/x-mysql%22%2C%22versionIdentifier%22%3A%225.5%22%7D%5D%2C%22example%22%3A%7B%22schema%22%3A%22CREATE%20TABLE%20test%20%28%5Cn%20%20id%20INT%5Cn%29%3B%5CnINSERT%20INTO%20test%20%28id%29%20VALUES%20%281%29%3B%5CnINSERT%20INTO%20test%20%28id%29%20VALUES%20%282%29%3B%22%2C%22query%22%3A%22SELECT%20*%20FROM%20test%3B%22%7D%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22typeIdentifier%22%3A%22pgsql%22%2C%22options%22%3A%5B%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%2215%22%2C%22url%22%3A%22server/pgsql/15%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%2C%22versionIdentifier%22%3A%2215%22%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%2214%22%2C%22url%22%3A%22server/pgsql/14%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%2C%22versionIdentifier%22%3A%2214%22%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%2213%22%2C%22url%22%3A%22server/pgsql/13%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%2C%22versionIdentifier%22%3A%2213%22%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%2212%22%2C%22url%22%3A%22server/pgsql/12%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%2C%22versionIdentifier%22%3A%2212%22%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%2211%22%2C%22url%22%3A%22server/pgsql/11%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%2C%22versionIdentifier%22%3A%2211%22%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%2210%22%2C%22url%22%3A%22server/pgsql/10%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%2C%22versionIdentifier%22%3A%2210.0%22%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%229.6%22%2C%22url%22%3A%22server/pgsql/9-6%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%2C%22versionIdentifier%22%3A%229.6%22%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%229.5%22%2C%22url%22%3A%22server/pgsql/9-5%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%2C%22versionIdentifier%22%3A%229.5%22%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%229.4%22%2C%22url%22%3A%22server/pgsql/9-4%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%2C%22versionIdentifier%22%3A%229.4%22%7D%5D%2C%22example%22%3A%7B%22schema%22%3A%22CREATE%20TABLE%20test%20%28%5Cn%20%20id%20INT%5Cn%29%3B%5CnINSERT%20INTO%20test%20%28id%29%20VALUES%20%281%29%3B%5CnINSERT%20INTO%20test%20%28id%29%20VALUES%20%282%29%3B%22%2C%22query%22%3A%22SELECT%20*%20FROM%20test%3B%22%7D%7D%2C%7B%22groupName%22%3A%22SQLite%22%2C%22typeIdentifier%22%3A%22sqlite%22%2C%22options%22%3A%5B%7B%22groupName%22%3A%22SQLite%22%2C%22name%22%3A%223.39%22%2C%22url%22%3A%22server/sqlite/3-39%22%2C%22dbType%22%3A%22sqlite%22%2C%22codeMirrorMode%22%3A%22text/x-sql%22%2C%22versionIdentifier%22%3A%223.39%22%7D%2C%7B%22groupName%22%3A%22SQLite%22%2C%22name%22%3A%223.37%22%2C%22url%22%3A%22server/sqlite/3-37%22%2C%22dbType%22%3A%22sqlite%22%2C%22codeMirrorMode%22%3A%22text/x-sql%22%2C%22versionIdentifier%22%3A%223.37%22%7D%2C%7B%22groupName%22%3A%22SQLite%22%2C%22name%22%3A%223.30%22%2C%22url%22%3A%22server/sqlite/3-30%22%2C%22dbType%22%3A%22sqlite%22%2C%22codeMirrorMode%22%3A%22text/x-sql%22%2C%22versionIdentifier%22%3A%223.30%22%7D%2C%7B%22groupName%22%3A%22SQLite%22%2C%22name%22%3A%223.26%22%2C%22url%22%3A%22server/sqlite/3-26%22%2C%22dbType%22%3A%22sqlite%22%2C%22codeMirrorMode%22%3A%22text/x-sql%22%2C%22versionIdentifier%22%3A%223.26%22%7D%5D%2C%22example%22%3A%7B%22schema%22%3A%22CREATE%20TABLE%20test%20%28%5Cn%20%20id%20INT%5Cn%29%3B%5CnINSERT%20INTO%20test%20%28id%29%20VALUES%20%281%29%3B%5CnINSERT%20INTO%20test%20%28id%29%20VALUES%20%282%29%3B%22%2C%22query%22%3A%22SELECT%20*%20FROM%20test%3B%22%7D%7D%5D%2C%22subscriptionPlanId%22%3A%22533317%22%2C%22name%22%3A%22db-fiddle%22%2C%22version%22%3A%22v2.28.0+dbc2e863%22%7D%2C%22featureFlags%22%3A%7B%7D%2C%22ember-cli-mirage%22%3A%7B%22usingProxy%22%3Afalse%2C%22useDefaultPassthroughs%22%3Atrue%7D%2C%22exportApplicationGlobal%22%3Afalse%7D">
+
+    <link rel="stylesheet" href="./lista 2 - banco de dados at_files/vendor-5f32ee7873324d73d64456d423d7f251.css" integrity="sha256-9VCJR1o4nqDJv4zOu68ZTEPNyDB1sy/99EepjM5f/aI= sha512-rd3fiDPgaKfMRc2CzPBAyOiJIjePJ0EJETG4wTCer23dswF/sRGFVafeXEqSDWsDta1RTVSqX/S6FbxvwS1eyA==">
+    <link rel="stylesheet" href="./lista 2 - banco de dados at_files/db-fiddle-cf6203640740933d4b6da142630c3665.css" integrity="sha256-BRUPTKKay1lIgiR/bqjtfXfp06uvzwPPEvVKhc8Zi40= sha512-bV2N7Okhxr63L525fOsxfNzTtduPk/Bxey04iy0t1XF/5WjkL2r3D+a90fgxfX03hSghHXJ1VQF+ctCjOBLQbQ==">
+
+    
+  <link rel="stylesheet" type="text/css" href="./lista 2 - banco de dados at_files/animate.css" media="all"><link rel="stylesheet" type="text/css" href="./lista 2 - banco de dados at_files/paddle.css" media="all">  <meta name="ember-cli-head-start" content=""><title>DB Fiddle - Playground de banco de dados SQL</title>
+<meta name="ember-cli-head-end" content="">
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="./lista 2 - banco de dados at_files/m=el_main_css"></head>
+  <body class="ember-application">
+    
+
+    <script async="" src="./lista 2 - banco de dados at_files/analytics.js.download"></script><script src="./lista 2 - banco de dados at_files/tracker.js.download"></script><script src="./lista 2 - banco de dados at_files/vendor-fd86f21331cc7f054eed858cf313ce61.js.download" integrity="sha256-tLcVmQJGBiNCWKl0mxgOuCZvzPRqkRlV3/ewgUWddZ4= sha512-CMCvXAOxgKp4LMi4mqRDb1akziJ0af68z1X+Pdu2rAPySaaF3g7wVUikeVX+E1V6FavZ8YBn7D87R3r1Xl/3Gw=="></script>
+    <script src="./lista 2 - banco de dados at_files/db-fiddle-46744897a1b843f6597f6367c6931d4c.js.download" integrity="sha256-09+jVK1XejizPZpjEtFmZZmYCEkXy1bx9uHNtDl5U1g= sha512-HDTAoGUjT3JalYeznlS53dAYZkTkR6qWcftmlCw9xBXe8u0XRgyr2BQK37QK5qz/D5sXCKVB/F5NMf6xVgZrxw=="></script>
+    <script src="./lista 2 - banco de dados at_files/paddle.js.download"></script>
+    <script src="./lista 2 - banco de dados at_files/widget.js.download"></script>
+    <script>
+      var TogetherJSConfig_hubBase = "https://togetherjs-hub.glitch.me/";
+      var TogetherJSConfig_toolName = "Collaboration";
+      var TogetherJSConfig_cloneClicks = "#runButton";
+      var TogetherJSConfig_ignoreMessages = true;
+    </script>
+    <script src="./lista 2 - banco de dados at_files/togetherjs-min.js.download"></script>
+
+    <div id="ember-basic-dropdown-wormhole"></div>
+    <script>
+      !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+      arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+      d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+      insertBefore(d,q)}(window,document,'script','_gs');
+      _gs('GSN-273724-J', false);
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-45377746-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  
+
+<div class="ember-view" id="ember338"><!---->
+
+<!---->
+
+<header id="ember396" class="ember-view"><a id="logo" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" href="https://www.db-fiddle.com/" class="ember-view">  <svg class="feather feather-database">
+  <use xlink:href="/assets/feather-sprite.svg#database"></use>
+</svg>
+<span id="HW_badge_cont" class="HW_badge_cont HW_visible" style=""><span id="HW_badge" class="HW_badge HW_visible" data-count-unseen="3" style=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></span></span></a>
+
+<div id="ember944" aria-owns="ember-basic-dropdown-content-ember943" tabindex="0" data-ebd-id="ember943-trigger" role="button" class="ember-power-select-trigger ember-basic-dropdown-trigger ember-view">    <div id="ember981" class="ember-view"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Banco de dados: </font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MySQL </font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">v </font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5.7</font></font></div>
+<!----><span class="ember-power-select-status-icon"></span>
+</div>
+  <div id="ember-basic-dropdown-content-ember943" class="ember-basic-dropdown-content-placeholder" style="display: none;"></div>
+
+  <button id="runButton" type="button" data-ember-action="" data-ember-action-948="948">
+    <svg class="feather feather-play">
+  <use xlink:href="/assets/feather-sprite.svg#play"></use>
+</svg>
+    <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Correr</font></font>
+  </button>
+    <button id="saveButton" type="button">
+      <svg class="feather feather-save">
+  <use xlink:href="/assets/feather-sprite.svg#save"></use>
+</svg>
+      <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Atualizar</font></font>
+    </button>
+    <button id="forkButton" type="button">
+      <svg class="feather feather-git-branch">
+  <use xlink:href="/assets/feather-sprite.svg#git-branch"></use>
+</svg>
+      <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Garfo</font></font>
+    </button>
+  <button id="loadExampleButton" type="button" data-ember-action="" data-ember-action-952="952">
+    <svg class="feather feather-refresh-cw">
+  <use xlink:href="/assets/feather-sprite.svg#refresh-cw"></use>
+</svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    Exemplo de carga
+  </font></font></button>
+      <button id="starButton" disabled="" type="button">
+        <svg class="feather feather-star">
+  <use xlink:href="/assets/feather-sprite.svg#star"></use>
+</svg>
+        <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Estrela</font></font>
+      </button>
+        <a id="ember955" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" target="_blank" href="https://www.db-fiddle.com/upgrade" class="pro-badge ember-view"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PRÓ</font></font></a>
+    <div id="embedButtonContainer">
+      <button id="embedButton" disabled="" type="button">
+        <svg class="feather feather-code">
+  <use xlink:href="/assets/feather-sprite.svg#code"></use>
+</svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        Embutir
+      </font></font></button>
+        <a id="ember957" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" target="_blank" href="https://www.db-fiddle.com/upgrade" class="pro-badge ember-view"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PRÓ</font></font></a>
+      <div id="embedPopup">
+          <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Incorporar trecho:</font></font></strong><br>
+          <textarea class="form-control" readonly="true">&lt;iframe width="100%" height="300" frameborder="0" src=""&gt;&lt;/iframe&gt;</textarea>
+          <small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Copie e cole o HTML acima para incorporar seu violino.</font></font></small>
+          <div id="embedDone">
+            <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Feito</font></font></strong>
+          </div>
+      </div>
+    </div>
+  <button id="collaborateButton" type="button" data-ember-action="" data-ember-action-958="958">
+    <svg class="feather feather-users">
+  <use xlink:href="/assets/feather-sprite.svg#users"></use>
+</svg>
+    <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Colaborar</font></font>
+  </button>
+
+<!---->
+<div class="pull-right">
+    <button id="signinButton" type="button" data-ember-action="" data-ember-action-456="456">
+      <svg class="feather feather-log-in">
+  <use xlink:href="/assets/feather-sprite.svg#log-in"></use>
+</svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+      Entrar
+    </font></font></button>
+  <a href="https://tally.so/r/mOJVgn" target="_blank" class="btn btn-green"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    Tem algum comentário?
+  </font></font></a>
+  <a href="https://twitter.com/db_fiddle" rel="noopener noreferrer" target="_blank" id="twitterLink" aria-label="Abra a página do DB Fiddle no Twitter">
+    <svg class="feather feather-twitter">
+  <use xlink:href="/assets/feather-sprite.svg#twitter"></use>
+</svg>
+  </a>
+</div></header>
+
+<main>
+<!---->  <div id="fiddle-editor" class="ember-view">
+
+  <div id="fiddle-editor-sidebar" class="ember-view"><div id="fiddle-editor-sidebar-content">
+  <div id="ember963" class="form-group ember-view">  <label for="title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Título do violino</font></font></label>
+<input id="title" maxlength="50" class="form-control" type="text">
+  <small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">50 caracteres restantes.</font></font></small>
+<!----></div>
+
+  <div id="ember964" class="form-group ember-view">  <label for="description"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Descrição do violino</font></font></label>
+<textarea id="description" maxlength="300" class="form-control"></textarea>
+  <small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">300 caracteres restantes.</font></font></small>
+<!----></div>
+
+  <div id="ember965" class="form-group ember-view">  <label for="private">
+    <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fiddle Privado </font><a id="ember966" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" target="_blank" href="https://www.db-fiddle.com/upgrade" class="pro-badge ember-view"><font style="vertical-align: inherit;">PRO</font></a></font>
+      <a id="ember966" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" target="_blank" href="https://www.db-fiddle.com/upgrade" class="pro-badge ember-view"><font style="vertical-align: inherit;"></font></a>
+  </label>
+<div id="ember967" class="x-toggle-component ember-view">  <label id="ember968" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer; display: none;" for="ember967-x-toggle" class="toggle-text toggle-prefix off-label ember-view">  <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Desligado</font></font>
+</label>
+
+  <span id="ember969" class="x-toggle-container medium x-toggle-container-disabled ember-view" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><input disabled="" class="x-toggle" id="ember967-x-toggle" name="default" type="checkbox">
+
+<label for="ember967-x-toggle">
+  <div aria-owns="ember967-x-toggle" role="checkbox" aria-checked="false" class="x-toggle-btn x-toggle-light medium x-toggle-disabled" data-tg-on="On" data-tg-off="Off" id="x-toggle-visual-ember967-x-toggle">
+  </div>
+</label>
+</span>
+
+  <label id="ember970" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer; display: none;" for="ember967-x-toggle" class="toggle-text toggle-prefix on-label ember-view">  <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sobre</font></font>
+</label>
+</div>
+  <small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Esta configuração não pode ser modificada após salvar o violino.</font></font></small>
+<!----></div>
+
+    <hr>
+    <a id="upgradeButton" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" href="https://www.db-fiddle.com/upgrade" class="btn btn-green ember-view"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Atualize para PRO</font></font></a>
+    <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+      50% DE DESCONTO para primeiros usuários
+    </font></font></strong>
+
+  <hr>
+  <div id="fiddle-editor-sidebar-links">
+    <a href="https://www.db-fiddle.com/f/nHryJJw2m1PKu6upVTb84W/5#" class="fiddle-editor-sidebar-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mostrar atalhos de teclado</font></font></a>
+  </div>
+</div>
+
+  <div id="fiddle-editor-sidebar-ad">
+      <script async="" src="./lista 2 - banco de dados at_files/carbon.js.download" id="_carbonads_js" type="text/javascript"></script><div id="carbonads"><div id="carbon-responsive">
+<style>
+#carbon-responsive a,#carbon-responsive a:hover{color:var(--carbon-text-color)}#carbon-responsive *{margin:unset;padding:unset;line-height:unset}#carbon-responsive{--carbon-padding:1em;--carbon-max-char:20ch;--carbon-bg-primary:hsl(0, 0%, 98%);--carbon-bg-secondary:hsl(0, 0%, 92%);--carbon-text-color:hsl(0, 0%, 20%);font-size:14px;font-family:system-ui,sans-serif;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-ms-flex-wrap:wrap;flex-wrap:wrap;min-inline-size:130px;max-inline-size:400px;gap:1ex;line-height:1.5}#carbon-responsive .carbon-responsive-wrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding:var(--carbon-padding);gap:var(--carbon-padding);border:solid 1px var(--carbon-bg-secondary);background-color:var(--carbon-bg-primary)}#carbon-responsive a{text-decoration:none}#carbon-responsive .carbon-img{-webkit-box-flex:0;-ms-flex:0 0 130px;flex:0 0 130px}#carbon-responsive .carbon-img img{display:block}#carbon-responsive .carbon-text{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:var(--carbon-max-char);flex-basis:var(--carbon-max-char);line-height:1.4;text-align:left}#carbon-responsive .carbon-poweredby{font-size:.85em;text-align:right;opacity:.5}
+</style>
+<style>#carbonads{max-height:500px}#carbon-cover{font-size:12px}#carbon-cover .carbon-logo img{max-width:100px}</style>
+<div class="carbon-responsive-wrap">
+	<a href="https://srv.carbonads.net/ads/click/x/GTND427JCASI55QECE7LYKQUC6SIE277CTBI4Z3JCAYIEK7JF67D62JKC67D5537CVSIT5QECVYITKQMCTAI62JLHEYI5KQUFTYI6K3ECTNCYBZ52K" class="carbon-img" target="_blank" rel="noopener sponsored">
+			<img src="./lista 2 - banco de dados at_files/4f7f59796c5dda8f5dfc63a40583dfde7cebb050" alt="anúncios via Carbon" border="0" height="100" width="130" data-no-statview="no" style="max-width: 130px;">
+		</a>
+		<a href="https://srv.carbonads.net/ads/click/x/GTND427JCASI55QECE7LYKQUC6SIE277CTBI4Z3JCAYIEK7JF67D62JKC67D5537CVSIT5QECVYITKQMCTAI62JLHEYI5KQUFTYI6K3ECTNCYBZ52K" class="carbon-text" target="_blank" rel="noopener sponsored"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+			Dicas de design e desenvolvimento em sua caixa de entrada. Todos os dias da semana.
+		</font></font></a>
+</div>
+<a href="http://carbonads.net/?utm_source=wwwdb-fiddlecom&amp;utm_medium=ad_via_link&amp;utm_campaign=in_unit&amp;utm_term=carbon" class="carbon-poweredby" target="_blank" rel="noopener sponsored"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">anúncios via Carbon</font></font></a>
+<style>#carbon-cover > a:first-child{aspect-ratio:unset}#carbon-cover .carbon-large-image{width:unset;max-width:100%}#carbon-cover a:hover .carbon-large-image{width:unset}#carbon-cover .carbon-logo{row-gap:1ch;min-height:unset}#carbon-cover .carbon-text{row-gap:1ch;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;height:unset}#carbon-cover .carbon-tagline{min-height:unset;max-inline-size:unset}#carbon-cover .carbon-description{-webkit-box-flex:unset;-ms-flex-positive:unset;flex-grow:unset;line-height:1.4;opacity:unset}#carbon-cover .carbon-cta{-ms-flex-item-align:stretch;-ms-grid-row-align:stretch;align-self:stretch;text-align:center}</style></div></div>
+  </div>
+
+<!---->
+<!----></div>
+
+<div id="fiddle-editor-main" class="no-results">
+    <div id="schema" class="panel ember-view"><div class="panel-title">
+  <h2>
+<!---->    <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Esquema SQL</font></font>
+  </h2>
+<!----></div>
+<textarea id="schema-input" style="touch-action: manipulation; cursor: pointer; display: none;" class="ember-view"></textarea><div class="CodeMirror CodeMirror-wrap cm-s-mdn-like CodeMirror-empty" translate="no"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 36px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 32px; margin-bottom: -17px; border-right-width: 33px; min-height: 23px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><pre class="CodeMirror-placeholder CodeMirror-line-like" style="height: 0px; overflow: visible; direction: ltr;">CREATE TABLE, INSERT, UPDATE etc.</pre><div class="CodeMirror-measure"><pre class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 15px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -32px; width: 32px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 33px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="height: 56px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 32px;"></div></div></div></div>
+<div class="panel-tools">
+    <button class="btn btn-sm" data-ember-action="" data-ember-action-974="974"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Texto para DDL</font></font></button>
+  <button id="schemaFullscreenButton" class="btn toggle-fullscreen" aria-label="Esquema SQL - Alternar tela cheia" type="button" data-ember-action="" data-ember-action-975="975">
+      <svg class="feather feather-maximize-2">
+  <use xlink:href="/assets/feather-sprite.svg#maximize-2"></use>
+</svg>
+  </button>
+</div>
+
+<!----></div>
+
+    <div id="query" class="panel ember-view"><div class="panel-title">
+  <h2>
+<!---->    <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Consultar SQL</font></font>
+  </h2>
+<!----></div>
+<textarea id="query-input" style="touch-action: manipulation; cursor: pointer; display: none;" class="ember-view"></textarea><div class="CodeMirror CodeMirror-wrap cm-s-mdn-like" translate="no"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 36px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 563px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 32px; margin-bottom: -17px; border-right-width: 33px; min-height: 563px; padding-right: 17px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>37</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 15px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -32px; width: 32px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">-- 1.Selecionar Livros Disponíveis</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-operator">*</span> <span class="cm-keyword">FROM</span> livros</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">WHERE</span> disponivel <span class="cm-operator">=</span> <span class="cm-number">1</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">-- 2.Selecionar por Editora</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-operator">*</span> <span class="cm-keyword">FROM</span> livros</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">WHERE</span> editora <span class="cm-keyword">LIKE</span> <span class="cm-string">"harpercollins"</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">-- 3.Selecionar por Ano de Publicação</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-operator">*</span> <span class="cm-keyword">FROM</span> livros</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">WHERE</span> ano_publicacao <span class="cm-keyword">BETWEEN</span> <span class="cm-number">2000</span> <span class="cm-keyword">AND</span> <span class="cm-number">2010</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">-- 4.Selecionar com COUNT e HAVING</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> autor<span class="cm-punctuation">,</span> <span class="cm-keyword">COUNT</span><span class="cm-bracket">(</span>titulo<span class="cm-bracket">)</span> <span class="cm-keyword">FROM</span> livros</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">GROUP</span> <span class="cm-keyword">BY</span> autor</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">HAVING</span> <span class="cm-keyword">COUNT</span><span class="cm-bracket">(</span>titulo<span class="cm-bracket">)</span> <span class="cm-operator">&gt;</span> <span class="cm-number">3</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">-- 5.Selecionar com LIKE</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-operator">*</span><span class="cm-keyword">FROM</span> livros</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">WHERE</span> titulo <span class="cm-keyword">LIKE</span> <span class="cm-string">"%senhor%"</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">-- 6.Selecionar com IN</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-operator">*</span> <span class="cm-keyword">FROM</span> livros</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">WHERE</span> categoria <span class="cm-keyword">IN</span> <span class="cm-bracket">(</span><span class="cm-string">"fantasia"</span><span class="cm-punctuation">,</span> <span class="cm-string">"ficção científica"</span><span class="cm-punctuation">,</span> <span class="cm-string">"fábula"</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">-- 7.Selecionar com DISTINCT</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-keyword">DISTINCT</span> idioma <span class="cm-keyword">FROM</span> livros<span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">-- 8.Selecionar com BETWEEN</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">30</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-operator">*</span> <span class="cm-keyword">FROM</span> livros</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">31</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">WHERE</span> quantidade_paginas <span class="cm-keyword">BETWEEN</span> <span class="cm-number">200</span> <span class="cm-keyword">AND</span> <span class="cm-number">400</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">32</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">33</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">-- 9.Selecionar Títulos e Anos de Publicação</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">34</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> titulo<span class="cm-punctuation">,</span> ano_publicacao <span class="cm-keyword">FROM</span> livros</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">35</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">ORDER</span> <span class="cm-keyword">BY</span> ano_publicacao<span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">36</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">37</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 33px; width: 1px; border-bottom: 0px solid transparent; top: 563px;"></div><div class="CodeMirror-gutters" style="height: 596px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 32px;"></div></div></div></div>
+<div class="panel-tools">
+<!---->  <button id="queryFullscreenButton" class="btn toggle-fullscreen" aria-label="Consultar SQL - Alternar tela cheia" type="button" data-ember-action="" data-ember-action-979="979">
+      <svg class="feather feather-maximize-2">
+  <use xlink:href="/assets/feather-sprite.svg#maximize-2"></use>
+</svg>
+  </button>
+</div>
+
+<!----></div>
+
+<!----></div></div>
+</main>
+
+<footer>
+  <div id="footer-strapline"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    DB Fiddle – Criado com ♥ pela </font></font><a href="https://www.status200.co.uk/" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Status200</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> no Reino Unido.
+  </font></font></div>
+  <div id="footer-legal">
+    <a id="ember539" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" href="https://www.db-fiddle.com/legal/terms-of-use" class="ember-view"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Termos de Uso</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 
+    •
+     </font></font><a id="ember550" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" href="https://www.db-fiddle.com/legal/privacy-and-cookie-policy" class="ember-view"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Política de Privacidade/Cookies</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 
+    •
+     </font></font><a href="https://www.status200.co.uk/" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Status200 Ltd</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> © 2018
+  </font></font></div>
+</footer>
+
+<div class="alert alert- " id="flash-message">
+  
+  <div id="flash-close" data-ember-action="" data-ember-action-558="558"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">×</font></font></div>
+</div>
+
+<div class="toaster toaster--hidden">
+  <div class="toaster__body">
+    <button class="toaster__close" type="button" data-ember-action="" data-ember-action-559="559">
+      <svg x-description="Heroicon name: outline/x" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Você está usando o DB Fiddle para realizar avaliações SQL?</font></font></h3>
+    <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+      Confira </font></font><a href="https://www.db-recruiter.com/?utm_source=db-fiddle&amp;utm_medium=toaster&amp;utm_campaign=db-fiddle" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">o DB Recruiter</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , uma plataforma que criamos exatamente para esse fim!
+    </font></font></p>
+    <a href="https://www.db-recruiter.com/?utm_source=db-fiddle&amp;utm_medium=toaster&amp;utm_campaign=db-fiddle" target="_blank" class="toaster__button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Visite o DB Recruiter</font></font></a>
+  </div>
+</div>
+
+<!----><!----></div><style id="HW_styles_cont">.HW_badge_cont {
+  visibility: hidden;
+  pointer-events: none;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.HW_absolute {
+  position: absolute !important;
+}
+
+.HW_badge_cont.HW_visible {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.HW_badge {
+  display: block;
+  border-radius: 20px;
+  background: #CD4B5B;
+  height: 16px;
+  width: 16px;
+  color: #fff;
+  text-align: center;
+  line-height: 16px;
+  font-size: 11px;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  opacity: 0;
+  will-change: scale;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+
+.HW_top {
+  top: -16px;
+}
+
+.HW_bottom {
+  bottom: -16px;
+}
+
+.HW_left {
+  left: -16px;
+}
+
+.HW_right {
+  right: -16px;
+}
+
+.HW_center, .HW_vcenter {
+  left: 50%;
+  margin-left: -16px;
+}
+
+.HW_center, .HW_hcenter {
+  top: 50%;
+  margin-top: -16px;
+}
+
+.HW_badge.HW_softHidden {
+  background: #d4d4d4;
+  opacity: 1;
+  transform: scale(0.6);
+}
+
+.HW_badge.HW_hidden {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.HW_badge.HW_visible {
+  opacity: 1;
+  transform: scale(1.0);
+}
+
+.HW_frame_cont {
+  pointer-events: none;
+  border-radius: 4px;
+  box-shadow: 0 0 1px rgba(99, 114, 130, 0.32), 0 8px 16px rgba(27, 39, 51, 0.08);
+  background: #fff;
+  border: none;
+  position: fixed;
+  top: -900em;
+  z-index: 2147483647;
+  width: 340px;
+  height: 0;
+  opacity: 0;
+  will-change: height, margin-top, opacity;
+  margin-top: -10px;
+  transition: margin-top 0.15s ease-out, opacity 0.1s ease-out;
+  overflow: hidden;
+}
+
+.HW_frame_cont.HW_visible {
+  opacity: 1;
+  pointer-events: auto;
+  margin-top: 0px;
+}
+
+.HW_frame_cont.HW_visible.HW_bottom {
+  transition: margin-top 0.15s ease-out, opacity 0.1s ease-out, height 0.3s ease-out;
+}
+
+.HW_frame {
+  background: #fff;
+  border: none;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  z-index: 2147483647;
+}
+
+.HW_frame_cont.HW_embed {
+  position: static;
+  margin-top: 0;
+}
+
+.HW_notransition {
+  transition: none !important;
+}</style><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class=" VIpgJd-yAWNEb-hvhgNd-l4eHX-i3jM8c"><img src="./lista 2 - banco de dados at_files/24px.svg" width="24" height="24" alt=""></div><div class=" VIpgJd-yAWNEb-hvhgNd-k77Iif-i3jM8c"><div class="VIpgJd-yAWNEb-hvhgNd-IuizWc" dir="ltr">Texto original</div><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid ltr"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od ltr" dir="ltr"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">Avalie a tradução</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">O feedback vai ser usado para ajudar a melhorar o Google Tradutor</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 ltr"><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Tradução boa" aria-label="Tradução boa" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Tradução ruim" aria-label="Tradução ruim" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="https://translate.googleapis.com/translate_voting?client=te_lib" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0" src="./lista 2 - banco de dados at_files/saved_resource.html"></iframe></div></div></div><div id="HW_frame_cont" class="HW_frame_cont HW_bottom" data-account="yjrZ6y" style="height: 331px;"><iframe id="HW_frame" class="HW_frame" src="./lista 2 - banco de dados at_files/yjrZ6y.html" referrerpolicy="strict-origin" sandbox="allow-same-origin allow-scripts allow-top-navigation allow-popups allow-forms allow-popups-to-escape-sandbox" tabindex="-1" aria-hidden="true" style="height: 331px;"></iframe></div></body></html>
